@@ -14,9 +14,12 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 echo '========================'
 echo 'Clone dotfiles and link them'
 echo '========================'
-git clone https://github.com/aum12/dotfiles.git ~/.dotfiles
+git clone git@gitlab.com:summit.bhalla/dotfiles.git ~/.dotfiles
 
 stow vim
-stow
+stow git
+#stow zsh
+echo '========================'
+echo 'Install Vim Plugins'
+echo '========================'
 vim +PluginInstall +qall
-
