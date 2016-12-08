@@ -1,20 +1,17 @@
 #!/bin/sh
 
 #git clone git@gitlab.com:summit.bhalla/dotfiles.git ~/.dotfiles
+echo '========================'
 echo 'Updating Package Manager and Pre-Requisites'
 echo '========================'
 sudo apt-get update
 sudo apt-get install -y vim git stow zsh
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-<<<<<<< HEAD
-sudo ~/.dotfiles/pwrfonts/install.sh
-=======
 #sudo ~/.dotfiles/pwrfonts/install.sh
 sudo locale-gen "en_US.UTF-8"
 sudo dpkg-reconfigure locales
 
->>>>>>> updates after first install
 echo '========================'
 echo 'Installing oh my zsh'
 echo '========================'
