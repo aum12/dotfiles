@@ -1,21 +1,23 @@
 #!/bin/sh
 
+#git clone git@gitlab.com:summit.bhalla/dotfiles.git ~/.dotfiles
 echo 'Updating Package Manager and Pre-Requisites'
 echo '========================'
 sudo apt-get update
-sudo apt-get install -y vim git stow
+sudo apt-get install -y vim git stow zsh
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+sudo ~/.dotfiles/pwrfonts/install.sh
 echo '========================'
 echo 'Installing oh my zsh'
 echo '========================'
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
 
 echo '========================'
 echo 'Clone dotfiles and link them'
 echo '========================'
-git clone git@gitlab.com:summit.bhalla/dotfiles.git ~/.dotfiles
-
+cd ~/.dotfiles
 stow vim
 stow git
 #stow zsh
