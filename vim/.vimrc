@@ -18,6 +18,7 @@ Plugin 'vim-syntastic/syntastic'	" syntax checking and linter
 Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
+Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
