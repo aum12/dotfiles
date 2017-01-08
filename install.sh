@@ -8,7 +8,6 @@ sudo apt-get update
 sudo apt-get install -y vim git stow zsh tmux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-#sudo ~/.dotfiles/pwrfonts/install.sh
 sudo locale-gen "en_US.UTF-8"
 sudo dpkg-reconfigure locales
 

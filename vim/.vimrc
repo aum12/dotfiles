@@ -19,7 +19,7 @@ Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
 "Plugin 'Valloric/YouCompleteMe'     " autocomplete
-Plugin 'chiphogg/vim-prototxt'
+Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -106,7 +106,7 @@ nnoremap <silent> ^ g^
 nnoremap <silent> $ g$
 
 vnoremap . :normal .<cr>	" enable . command in visual mode
-inoremap kj <esc>			" jk is escape
+inoremap jk <esc>			" jk is escape
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
 " }}}
