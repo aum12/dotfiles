@@ -18,6 +18,8 @@ Plugin 'vim-syntastic/syntastic'	" syntax checking and linter
 Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
+"Plugin 'Valloric/YouCompleteMe'     " autocomplete
+Plugin 'chiphogg/vim-prototxt'
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -161,6 +163,32 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 " }}}
+
+" Syntastic Config {{{ 
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+" On by default, turn it off for html
+"let g:syntastic_mode_map = { 'mode': 'active',
+"                           \ 'active_filetypes': [],
+"                           \ 'passive_filetypes': ['html'] }
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" Better :sign interface symbols
+"let g:syntastic_error_symbol = '✗'
+"let g:syntastic_warning_symbol = '!'
+
+" Use flake8
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801"'
+"}}}
+
 " Custom Functions {{{
 function! ToggleNumber()
 	if(&relativenumber == 1)

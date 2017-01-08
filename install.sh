@@ -5,7 +5,7 @@ echo '========================'
 echo 'Updating Package Manager and Pre-Requisites'
 echo '========================'
 sudo apt-get update
-sudo apt-get install -y vim git stow zsh
+sudo apt-get install -y vim git stow zsh tmux
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 #sudo ~/.dotfiles/pwrfonts/install.sh
