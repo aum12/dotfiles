@@ -18,7 +18,7 @@ Plugin 'vim-syntastic/syntastic'	" syntax checking and linter
 Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
-"Plugin 'Valloric/YouCompleteMe'     " autocomplete
+Plugin 'Valloric/YouCompleteMe'     " autocomplete
 Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
 
 " colorschemes
@@ -199,4 +199,10 @@ endfunc
 
 " }}}
 
+" YouCompleteMe Config {{{
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:airline_exclude_preview = 1
+
+"}}}
 " vim:foldmethod=marker:foldlevel=0
