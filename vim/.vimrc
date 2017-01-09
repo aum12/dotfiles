@@ -67,7 +67,7 @@ set showbreak="\u21aa"      " show ellipsis at breaking
 
 " UI layout {{{
 set number					" show line numbers
-"set relativenumber			" show relative line numbers
+set relativenumber          " show relative line numbers
 set cursorline				" highlight current line
 set wildmenu				" visual autocomplete for command menu
 set showmatch				" highlight matching parenthesis
@@ -78,9 +78,6 @@ set cmdheight=1             " command bar height
 
 set magic                   " Set magic on, for regex
 
-" make comments and HTML attributes italic
-" highlight Comment cterm=italic
-" highlight htmlArg cterm=italic
 " }}}
 
 " Searching {{{
@@ -117,9 +114,10 @@ nmap <leader>, :w<cr>		" shortcut to save
 noremap <leader>s :mksession<cr> " save session and can reopen with vim -S
 nnoremap <leader>u :GundoToggle<cr> " toggle gundo
 nnoremap <leader>n :call ToggleNumber()<cr> " toggle between absolute and relative line numbers
+nnoremap <leader>1 :set number!<cr> " remove line numbers (mainly for terminal copying)
 
-"nmap <leader>o :o<Esc>            " enter blank line below current line in normal mode
-"nmap <leader>O :O<Esc>            " enter blank line above current line in normal mode
+nmap <leader>o o<Esc>            " enter blank line below current line in normal mode
+nmap <leader>O O<Esc>j            " enter blank line above current line in normal mode
 nnoremap <leader>/ "fyiw :/<c-r>f<cr>  " search for word under the cursor
 set pastetoggle=<leader>v	" set past toggle
 
@@ -143,9 +141,9 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
-"let NERDTreeShowHidden=1
-"let NERDTreeDirArrowExpandable = '▷'
-"let NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeShowHidden=1
+let NERDTreeDirArrowExpandable = '▷'
+let NERDTreeDirArrowCollapsible = '▼'
 "}}}
 
 "Fugitive Config {{{

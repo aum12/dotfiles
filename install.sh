@@ -17,6 +17,9 @@ echo '========================'
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 chsh -s $(which zsh)
 
+echo "export LC_ALL=en_US.UTF-8" >> .zshrc
+echo "eval `dircolors ~/.dircolors/dircolors.ansi-dark`" >> .zshrc
+
 echo '========================'
 echo 'Clone dotfiles and link them'
 echo '========================'
