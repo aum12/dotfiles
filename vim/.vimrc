@@ -106,6 +106,8 @@ vnoremap . :normal .<cr>	" enable . command in visual mode
 inoremap jk <esc>			" jk is escape
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
+" run python script from buffer
+autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " }}}
 
 " Leader Shortcuts {{{
