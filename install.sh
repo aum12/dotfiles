@@ -7,7 +7,7 @@ echo '========================'
 #add repo that can get latest version of vim; for autocomplete support
 sudo add-apt-repository ppa:pkg-vim/vim-daily
 sudo apt-get update
-sudo apt-get install -y vim git stow zsh tmux
+sudo apt-get install -y vim git stow zsh tmux python-flake8
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 sudo locale-gen "en_US.UTF-8"

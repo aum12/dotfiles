@@ -164,25 +164,25 @@ let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 " }}}
 
-" Syntastic Config {{{ 
+" Syntastic Config {{{
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " On by default, turn it off for html
 "let g:syntastic_mode_map = { 'mode': 'active',
 "                           \ 'active_filetypes': [],
 "                           \ 'passive_filetypes': ['html'] }
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Better :sign interface symbols
-"let g:syntastic_error_symbol = '✗'
-"let g:syntastic_warning_symbol = '!'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
 
 " Use flake8
 let g:syntastic_python_checkers = ['flake8']
