@@ -4,7 +4,8 @@
 echo '========================'
 echo 'Updating Package Manager and Pre-Requisites'
 echo '========================'
-#add repo that can get latest version of vim; for autocomplete support
+#add repo that can get latest (daily) version of vim; for autocomplete support
+sudo apt-get install -y software-properties-common python-software-properties
 sudo add-apt-repository ppa:pkg-vim/vim-daily
 sudo apt-get update
 sudo apt-get install -y vim git stow zsh tmux python-flake8
