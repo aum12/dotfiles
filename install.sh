@@ -8,7 +8,7 @@ echo '========================'
 sudo apt-get install -y software-properties-common python-software-properties
 sudo add-apt-repository ppa:pkg-vim/vim-daily
 sudo apt-get update
-sudo apt-get install -y vim git stow zsh tmux python-flake8
+sudo apt-get install -y vim git stow zsh tmux python-flake8 python-autopep8
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 sudo locale-gen "en_US.UTF-8"

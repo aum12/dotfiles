@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
 Plugin 'Valloric/YouCompleteMe'     " autocomplete
 Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
+Plugin 'tell-k/vim-autopep8'        " automatic application of PEP 8 style guide to python files
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -123,6 +124,9 @@ nmap <leader>O O<Esc>j            " enter blank line above current line in norma
 nnoremap <leader>/ "fyiw :/<c-r>f<cr>  " search for word under the cursor
 set pastetoggle=<leader>v	" set past toggle
 
+nnoremap <leader>x :let g:ycm_auto_trigger=0<CR>    " turn off YCM
+nnoremap <leader>X :let g:ycm_auto_trigger=1<CR>    "turn on YCM
+
 " edit vimrc/zshrc and load vimrc bindings
 nnoremap <leader>ev :vsp ~/.vimrc<cr>
 nnoremap <leader>ez :vsp ~/.zshrc<cr>
@@ -176,7 +180,7 @@ set statusline+=%*
 "                           \ 'passive_filetypes': ['html'] }
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -205,6 +209,7 @@ endfunc
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:airline_exclude_preview = 1
+let g:loaded_youcompleteme = 1
 
 "}}}
 " vim:foldmethod=marker:foldlevel=0
