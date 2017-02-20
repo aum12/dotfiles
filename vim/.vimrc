@@ -46,6 +46,7 @@ colorscheme solarized
 set ttyfast							" faster redraw
 set backspace=indent,eol,start		" make backspace behave as one expects
 set clipboard=unnamed
+set splitright                      " default to open split on right of current buffer
 " }}}
 
 " Spaces, Wraps & Tabs {{{
