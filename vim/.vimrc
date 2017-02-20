@@ -205,7 +205,7 @@ let g:syntastic_warning_symbol = '!'
 
 " Use flake8
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801"'
+let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801,E231,E226"'
 "}}}
 
 " Custom Functions {{{
