@@ -35,9 +35,9 @@ filetype plugin indent on			" Required for Vundle
 
 " Colors {{{
 syntax enable
-"let g:solarized_termtrans=1
-se t_Co=16
+" let g:solarized_termtrans=1
 set background=dark
+set t_Co=16
 colorscheme solarized
 "set t_Co=256
 " }}}
@@ -109,6 +109,11 @@ inoremap jk <esc>			" jk is escape
 noremap <space> :set hlsearch! hlsearch?<cr>
 " run python script from buffer
 autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
+map <silent> <C-h> :call WinMove('h')<cr>
+map <silent> <C-j> :call WinMove('j')<cr>
+map <silent> <C-k> :call WinMove('k')<cr>
+map <silent> <C-l> :call WinMove('l')<cr>
 " }}}
 
 " Leader Shortcuts {{{
@@ -141,6 +146,14 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 
+" CtrlP Config {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+" }}}
+
 " NERDTree Config {{{
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeToggle<cr>
@@ -150,7 +163,8 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
-"}}}
+
+" }}}
 
 "Fugitive Config {{{
 "nmap <silent> <leader>gs :Gstatus<cr>
@@ -202,6 +216,19 @@ function! ToggleNumber()
 		set relativenumber
 	endif
 endfunc
+
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
 
 " }}}
 

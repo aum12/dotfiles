@@ -97,3 +97,6 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 export KEYTIMEOUT=1
+
+# alias tmux to run in 256 colour enabled environment
+alias tmux="TERM=xterm-256color /usr/bin/tmux"
