@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'		" let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'		" file drawer
 Plugin 'ctrlpvim/ctrlp.vim' 		" fuzzy file finder
 Plugin 'tpope/vim-surround'			" mapping to CRUD surroundings such as parentheses, brackets etc.
-Plugin 'tpope/vim-fugitive'				" git wrapper for vim
+Plugin 'tpope/vim-fugitive'			" git wrapper for vim
 Plugin 'vim-syntastic/syntastic'	" syntax checking and linter
 Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
@@ -21,6 +21,7 @@ Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
 Plugin 'Valloric/YouCompleteMe'     " autocomplete
 Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
 Plugin 'tell-k/vim-autopep8'        " automatic application of PEP 8 style guide to python files
+Plugin 'christoomey/vim-tmux-navigator' " navigate across vim and tmux panes
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -111,10 +112,6 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 " run python script from buffer
 autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
-map <silent> <C-h> :call WinMove('h')<cr>
-map <silent> <C-j> :call WinMove('j')<cr>
-map <silent> <C-k> :call WinMove('k')<cr>
-map <silent> <C-l> :call WinMove('l')<cr>
 " }}}
 
 " Leader Shortcuts {{{
@@ -152,6 +149,12 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+" open selected files in right split buffer by default
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-v>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
+    \ }
 
 " }}}
 
@@ -217,19 +220,6 @@ function! ToggleNumber()
 		set relativenumber
 	endif
 endfunc
-
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key,'[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
-endfunction
 
 " }}}
 
