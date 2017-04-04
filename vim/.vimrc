@@ -48,6 +48,7 @@ set ttyfast							" faster redraw
 set backspace=indent,eol,start		" make backspace behave as one expects
 set clipboard=unnamed
 set splitright                      " default to open split on right of current buffer
+set mouse=a                         " allow mouse scrolling in vim while in tmux session
 " }}}
 
 " Spaces, Wraps & Tabs {{{
