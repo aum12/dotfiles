@@ -64,14 +64,15 @@ set autoindent				" automatically set indent of new line
 set smartindent
 
 set wrap                    " turn on line wrapping
-set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
-set showbreak="\u21aa"      " show ellipsis at breaking
+set nolist                  " line breaking works when list is disabled
+
+set wrapmargin=8            " wrap lines when coming within n characters from side
+set showbreak=…        " show ellipsis at breaking
 " }}}
 
 " UI layout {{{
 set number					" show line numbers
-set relativenumber          " show relative line numbers
 set cursorline				" highlight current line
 set wildmenu				" visual autocomplete for command menu
 set showmatch				" highlight matching parenthesis
@@ -121,7 +122,7 @@ nmap <leader>, :w<cr>		" shortcut to save
 noremap <leader>s :mksession<cr> " save session and can reopen with vim -S
 nnoremap <leader>u :GundoToggle<cr> " toggle gundo
 nnoremap <leader>n :call ToggleNumber()<cr> " toggle between absolute and relative line numbers
-nnoremap <leader>1 :set number!<cr> " remove line numbers (mainly for terminal copying)
+nnoremap <leader>1 :set number!<cr> " remove line numbers (mainly for buffer copying)
 
 nmap <leader>o o<Esc>            " enter blank line below current line in normal mode
 nmap <leader>O O<Esc>j            " enter blank line above current line in normal mode
