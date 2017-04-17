@@ -4,9 +4,12 @@
 echo '========================'
 echo 'Updating Package Manager and Pre-Requisites'
 echo '========================'
-#add repo that can get latest (daily) version of vim; for autocomplete support
+#add repo for latest version of vim; for autocomplete support
+#add repo for tmux v2.0 install (ubuntu 14.04)
+sudo apt-get update
 sudo apt-get install -y software-properties-common python-software-properties
-sudo add-apt-repository ppa:pkg-vim/vim-daily
+sudo add-apt-repository -y ppa:pkg-vim/vim-daily
+sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get install -y vim git stow zsh tmux python-flake8 python-autopep8 xclip
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
