@@ -64,11 +64,12 @@ set autoindent				" automatically set indent of new line
 set smartindent
 
 set wrap                    " turn on line wrapping
-set linebreak               " set soft wrapping
-set nolist                  " line breaking works when list is disabled
+set textwidth=0
+" set linebreak             " set soft wrapping
+" set nolist                " line breaking works when list is disabled
 
 set wrapmargin=8            " wrap lines when coming within n characters from side
-set showbreak=…        " show ellipsis at breaking
+set showbreak=…             " show ellipsis at breaking
 " }}}
 
 " UI layout {{{
