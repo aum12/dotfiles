@@ -58,10 +58,8 @@ set softtabstop=4     		" 4 space tab
 set shiftwidth=4
 set modelines=1
 
-filetype indent on
-filetype plugin on
 set autoindent				" automatically set indent of new line
-set smartindent
+filetype plugin indent on
 
 set wrap                    " turn on line wrapping
 set textwidth=0
