@@ -15,13 +15,18 @@ Plugin 'ctrlpvim/ctrlp.vim' 		" fuzzy file finder
 Plugin 'tpope/vim-surround'			" mapping to CRUD surroundings such as parentheses, brackets etc.
 Plugin 'tpope/vim-fugitive'			" git wrapper for vim
 Plugin 'vim-syntastic/syntastic'	" syntax checking and linter
+Plugin 'tell-k/vim-autopep8'        " automatic application of PEP 8 style guide to python files
 Plugin 'vim-airline/vim-airline'	" status/tabline bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sjl/gundo.vim'				" visualize the vim undo tree
-Plugin 'Valloric/YouCompleteMe'     " autocomplete
 Plugin 'chiphogg/vim-prototxt'      " syntax highlighting for proto files
-Plugin 'tell-k/vim-autopep8'        " automatic application of PEP 8 style guide to python files
 Plugin 'christoomey/vim-tmux-navigator' " navigate across vim and tmux panes
+
+" Code Utils
+Plugin 'davidhalter/jedi-vim'       " python autocomplete; lightweight vs YCM
+Plugin 'Konfekt/FastFold'           " circumvent vim's slow folding
+Plugin 'tmhedberg/SimpylFold'
+" Plugin 'Valloric/YouCompleteMe'     " autocomplete [disbled for now]
 
 " colorschemes
 Plugin 'altercation/vim-colors-solarized'
@@ -209,7 +214,7 @@ let g:syntastic_warning_symbol = '!'
 
 " Use flake8
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801,E231,E226"'
+let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,E121,W801,E231,E226,W291,W293"'
 "}}}
 
 " Custom Functions {{{
@@ -227,8 +232,15 @@ endfunc
 " YouCompleteMe Config {{{
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:airline_exclude_preview = 1
-let g:loaded_youcompleteme = 1
+"let g:airline_exclude_preview = 1
+"let g:loaded_youcompleteme = 1
 
 "}}}
+
+" Jedi-vim Config {{{
+" disable docstring window popup on autocomplete 
+autocmd FileType python setlocal completeopt-=preview
+
+"}}}
+
 " vim:foldmethod=marker:foldlevel=0
